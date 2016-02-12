@@ -1,0 +1,28 @@
+project = quey-ui
+url = http://github.com/quey-project
+description = Quey UI Documentation
+sourcedirs = .
+sourcedirs += ../modules/quey/ui/
+
+indexes = $QT_INSTALL_DOCS/qtquick/qtquick.index
+indexes += $QT_INSTALL_DOCS/qtquickcontrols/qtquickcontrols.index
+
+
+imagedirs = images
+sources.fileextensions = "*.qml *.qdoc *.cpp *.js"
+headers.fileextensions = "*.h"
+
+outputdir = ./html
+outputformats = HTML
+version = 0.1
+syntaxhighlighting = true
+sourceencoding = UTF-8
+outputencoding = UTF-8
+
+# Override the header styles
+HTML.headerstyles  = \
+    "  <link rel=\"stylesheet\" type=\"text/css\" href=\"style/style.css\" />\n"
+
+HTML.stylesheets = style/style.css \
+                   style/encode-sans-regular.ttf \
+                   style/hack-regular.ttf
