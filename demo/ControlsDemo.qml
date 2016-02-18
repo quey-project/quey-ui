@@ -51,6 +51,7 @@ ApplicationView {
                     text: "Icon Button"
                 }
             }
+
             Button {
                 text: "Default Dialog"
                 onClicked: dialogDefault.open()
@@ -64,6 +65,16 @@ ApplicationView {
             Button {
                 text: "Custom Dialog"
                 onClicked: dialogCustom.open()
+            }
+
+            Row {
+                spacing: Style.spacing
+
+                Switch {}
+
+                Label {
+                    text: "Switch"
+                }
             }
 
             Slider {

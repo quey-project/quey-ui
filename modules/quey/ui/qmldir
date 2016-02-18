@@ -9,6 +9,7 @@ IconButton 0.1 0.1/IconButton.qml
 CheckBox 0.1 0.1/CheckBox.qml
 RadioButton 0.1 0.1/RadioButton.qml
 RadioGroup 0.1 0.1/RadioGroup.qml
+Switch 0.1 0.1/Switch.qml
 TextField 0.1 0.1/TextField.qml
 TextArea 0.1 0.1/TextArea.qml
 ActivityIndicator 0.1 0.1/ActivityIndicator.qml
