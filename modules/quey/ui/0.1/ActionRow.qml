@@ -42,7 +42,7 @@ Row {
     /*!
       The icon color.
     */
-    property color iconColor
+    property color iconColor: Style.palette.regular
 
     Repeater {
         model: actions
