@@ -41,8 +41,6 @@ import quey.ui 0.1
        width: Units.dp(640)
        height: Units.dp(480)
 
-       title: "My Awesome Application"
-
        Button {
            anchors.centerIn: parent
            text: "Hello World"
@@ -51,7 +49,7 @@ import quey.ui 0.1
    \endqml
 
  */
-Window {
+Rectangle {
     id: application
 
     color: Style.palette.background
