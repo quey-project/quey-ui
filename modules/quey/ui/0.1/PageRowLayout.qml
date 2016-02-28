@@ -75,6 +75,7 @@ PageView {
     onPagePopped: d.apply()
     onPagePushed: d.apply()
     onContainersChanged: d.refreshColumns()
+    Component.onCompleted: d.apply()
 
     SplitView {
         id: splitView
