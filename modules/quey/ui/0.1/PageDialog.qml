@@ -63,6 +63,8 @@ PageContainer {
 
         title: pageContainer.currentPage !== null ? pageContainer.currentPage.title : ""
 
+        contentMargins: 0
+
         onClosed: {
             if (!automaticClose)
                 pageContainer.pageView.pop(pageContainer.currentPage);
