@@ -82,7 +82,7 @@ Item {
             border.width: Style.border.width
             border.color: enabled ? item.color : Style.disabledColor(item.color)
 
-            color: selected ? item.color : (hovered ? Style.hoverColor(item.color): Style.palette.widgetBackground)
+            color: selected ? (enabled ? item.color : (hovered ? Style.hoverColor(item.color) : Style.disabledColor(item.color) )) : Style.palette.widgetBackground
 
             property alias text: label.text
 
