@@ -21,6 +21,7 @@ The demo code is released under the [MIT license](https://opensource.org/license
 
 ```
     git clone https://github.com/quey-project/quey-ui
+    cd quey-ui
     qmake
     make
     sudo make install
