@@ -24,7 +24,7 @@ Item {
     height: Units.dp(67)
     width: Units.dp(256)
 
-    property bool movable: model.movable
+    property bool movable: view.movable
 
     property int uid: (index >= 0) ? model.uid : -1
     property var view: model.view
@@ -64,9 +64,9 @@ Item {
     Tab {
         id: tab
 
-        iconName: model.iconName
-        title: model.title
-        closable: model.closable
+        iconName: view.iconName
+        title: view.title
+        closable: view.closable
 
         height: tabBarItem.height
         width: tabBarItem.width

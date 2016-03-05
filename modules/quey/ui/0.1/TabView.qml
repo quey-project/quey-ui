@@ -156,11 +156,7 @@ Item {
         var modelData = {
             view: view,
             uid: lastTabUID,
-            state: "inactive",
-            title: view.title,
-            closable: view.closable,
-            movable: view.movable,
-            iconName: view.iconName
+            state: "inactive"
         }
 
         view.uid = lastTabUID;

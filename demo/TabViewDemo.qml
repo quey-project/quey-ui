@@ -69,6 +69,7 @@ ApplicationView {
             Button {
                 anchors.centerIn: parent
                 text: page.title
+                onClicked: page.title = "Hello World :)"
             }
         }
     }
