@@ -49,6 +49,7 @@
    \endqml
  */
 var root
+var alertDialog
 
 /*!
     \qmlmethod Alert::show(string title, string text, Button button1, Button button2, ..., function onclosed)
@@ -56,7 +57,9 @@ var root
 */
 function show (title, text) {
     var buttons = [];
-    var alertDialog = alertComponent.createObject(root, {title: title, text: text });
+    if (typeof(alertDialog) != "undefined")
+        alertDialog.destroy();
+    alertDialog = alertComponent.createObject(root, {title: title, text: text });
     var onclosed = arguments[arguments.length-1];
     var end = arguments.length;
     if (typeof(onclosed) == "function")
@@ -71,7 +74,6 @@ function show (title, text) {
     alertDialog.buttons = buttons;
     if (onclosed)
         alertDialog.closed.connect(onclosed)
-    alertDialog.closed.connect(function(){alertDialog.destroy();})
     alertDialog.open();
 }
 
