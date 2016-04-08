@@ -20,16 +20,16 @@
  */
 import QtQuick 2.4
 import QtQuick.Window 2.1
+import QtQuick.Controls 1.4
 import quey.ui 0.1
 /*!
-   \qmltype ApplicationView
+   \qmltype ApplicationWindow
    \inqmlmodule quey.ui
-   \inherits Rectangle
-   \brief Provides the root item for applications
+   \brief Provides a root window for applications
 
-   It is recommended to use either \l ApplicationView or \l ApplicationWindow as root component for any Quey UI based application.
+   It is recommended to use either \l ApplicationWindow or \l ApplicationView as root component for any Quey UI based application.
 
-   \l ApplicationView provides layer components neccessary to display popups like \l Dialog or \l Menu.
+   \l ApplicationWindow provides layer components neccessary to display popups like \l Dialog or \l Menu.
    Those layers have a \c z  value of \c 25. Please keep the \c z values of your items under this value
    unless you want those items to be displayed above popups.
 
@@ -37,7 +37,7 @@ import quey.ui 0.1
    import QtQuick 2.4
    import quey.ui 0.1
 
-   ApplicationView {
+   ApplicationWindow {
        width: Units.dp(640)
        height: Units.dp(480)
 
@@ -48,12 +48,12 @@ import quey.ui 0.1
    }
    \endqml
 
-   Also see \l ApplicationWindow.
+   Also see \l ApplicationView.
 
  */
-Rectangle {
+ApplicationWindow {
     id: application
-    objectName: "ApplicationView"
+    objectName: "ApplicationWindow"
 
     color: Style.palette.background
     visible: true
