@@ -40,14 +40,24 @@ Item {
     property list<Action> actions
 
     /*!
+        Set this to \c false if you want to hide the page header.
+    */
+    property bool showHeader: true
+
+    /*!
+        When set to \c true the page can't be popped from the view using the "back button".
+    */
+    property bool fixed: false
+
+    /*!
         This property is \c true if \l menu is valid.
     */
     readonly property bool hasMenu: menu.items.length > 0
 
     /*!
-        Set this to \c false if you want to hide the page header.
+        If the page is currently present in a \l PageView this property holds a reference to it. Otherwise it is \c undefined.
     */
-    property bool showHeader: true
+    property var pageView
 
     /*!
         A list of \l MenuItem.
@@ -67,4 +77,28 @@ Item {
     */
     property list<PageContainer> containers
 
+    /*!
+        Emitted when page is pushed to a \l PageView.
+    */
+    signal pushed(var pageView)
+
+    /*!
+        Emitted when page is popped from a \l PageView.
+    */
+    signal popped(var pageView)
+
+    /*!
+        Push this page to a \l PageView.
+    */
+    function push(pageView) {
+        pageView.push(page);
+    }
+
+    /*!
+        Pop the page from the current \l PageView if any.
+    */
+    function pop() {
+        if (pageView)
+            pageView.pop(page);
+    }
 }

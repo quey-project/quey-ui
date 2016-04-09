@@ -37,11 +37,6 @@ Item {
     property list<Action> actions
 
     /*!
-      Called when the user pressed the back button. The back button is only visible if \l isSubPage is set to \c true.
-    */
-    signal backClicked()
-
-    /*!
       Sets the ActionBar's title.
     */
     property string title
@@ -52,6 +47,11 @@ Item {
     property bool isSubPage
 
     /*!
+      If this is set to \c false the back button is disabled.
+    */
+    property bool backButtonEnabled: true
+
+    /*!
       This property is true if \l menu is valid.
     */
     readonly property bool hasMenu: menu !== null
@@ -60,6 +60,11 @@ Item {
       Sets the icon color. Defaults to \c Style.palette.regular.
     */
     property color iconColor: Style.palette.regular
+
+    /*!
+      Called when the user pressed the back button. The back button is only visible if \l isSubPage is set to \c true.
+    */
+    signal backClicked()
 
     height: visible ? Units.dp(48) : 0
 
@@ -86,6 +91,7 @@ Item {
             visible: isSubPage
             iconName: "arrow-left"
             iconSize: Units.dp(24)
+            enabled: backButtonEnabled
             onClicked: backClicked()
         }
 

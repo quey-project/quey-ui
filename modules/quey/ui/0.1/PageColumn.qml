@@ -37,6 +37,7 @@ PageContainer {
         actions: currentPage !== null ? currentPage.actions: null
         menu: currentPage !== null && currentPage.hasMenu ? currentPage.menu: null
         visible: currentPage && currentPage.showHeader
+        backButtonEnabled: currentPage && !currentPage.fixed
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right

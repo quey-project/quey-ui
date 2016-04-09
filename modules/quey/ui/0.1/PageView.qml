@@ -57,6 +57,8 @@ Item {
             pages.splice(pages.indexOf(page), 1);
         pages.push(page);
         pagesChanged();
+        page.pageView = pageView;
+        page.pushed(pageView);
         pagePushed(page);
     }
 
@@ -66,6 +68,8 @@ Item {
     function pop(page) {
         pages.splice(pages.indexOf(page), 1);
         pagesChanged();
+        page.pageView = undefined;
+        page.popped(pageView);
         pagePopped(page);
     }
 }
