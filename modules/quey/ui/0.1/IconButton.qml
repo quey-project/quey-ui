@@ -72,10 +72,11 @@ Item {
     property alias hoverEnabled: mouseArea.hoverEnabled
 
     width: iconSize
-    height: iconSize
+    height: 48
 
     Icon {
         id: icon
+        anchors.centerIn: parent
         color: enabled ? (!hovered ? iconColor : Style.hoverColor(iconColor)) : Style.disabledColor(iconColor)
     }
 
