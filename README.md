@@ -17,14 +17,55 @@ The demo code is released under the [MIT license](https://opensource.org/license
 * Qt 5.4 or higher
 * QtQuick, QtQuick.Controls
 
+If you want to use the included scripts you also need to have Python 3 installed.
+
 ## Installation on Linux
+
+### Per-project installation
+
+Clone Quey UI and use the setup script to install a git submodule to your project:
+
+```
+    git clone https://github.com/quey-project/quey-ui
+    cd quey-ui
+    ./setup.py submodule -project <path-to-project>
+```
+
+Or alternatively, if you don't want to use the setup script:
+
+```
+    cd <path-to-project>
+    git submodule add https://github.com/quey-project/quey-ui quey-ui
+```
+
+Generate the `qrc` wrapper files:
+```
+    cd <path-to-project/quey-ui>
+    ./setup.py qrc
+```
+
+Add the `.pri` file to your Qt project file (`.pro`):
+
+```
+    include(quey-ui/quey-ui.pri)
+```
+
+### System-wide installation
+
+```
+    git clone https://github.com/quey-project/quey-ui
+    cd quey-ui
+    ./setup.py install -qmake <path-to-qmake>
+```
+
+Or alternatively, if you don't want to use the setup script:
 
 ```
     git clone https://github.com/quey-project/quey-ui
     cd quey-ui
     qmake
     make
-    sudo make install
+    make install
 ```
 
 ## Copyright and License

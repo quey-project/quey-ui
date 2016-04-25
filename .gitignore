@@ -38,3 +38,13 @@ CMakeLists.txt.user
 
 # Docs html
 docs/html
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# QRC Wrappers
+ui.qrc
+fonts.qrc
+icons.qrc
