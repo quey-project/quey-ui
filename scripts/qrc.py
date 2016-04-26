@@ -57,7 +57,8 @@ def create_qrc(*dirs, filename="out.qrc", allowed_extensions=default_allowed_ext
         prefix_element = etree.SubElement(root_element, "qresource", prefix=prefix)
         for file in file_list:
             if len(list(filter(lambda ext: file.endswith(ext), allowed_extensions))) > 0:
-                etree.SubElement(prefix_element, "file", {}).text = file
+                etree.SubElement(prefix_element, "file", alias=os.path.relpath(file,
+                                                                               dirname)).text = file
     roughxml = etree.tostring(root_element)
     prettyxml = minidom.parseString(roughxml).toprettyxml()
     with open(filename, "w") as file:
