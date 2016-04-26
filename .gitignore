@@ -44,6 +44,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# PyCharm Project Settings
+.idea/
+
 # QRC Wrappers
 ui.qrc
 fonts.qrc
